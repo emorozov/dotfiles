@@ -4,6 +4,7 @@
 	signingkey = 3FD81BB20ED80231
 [core]
 	autocrlf = input
+	pager = less -FXRK
 [merge]
 	tool = meld
 	ff = only
