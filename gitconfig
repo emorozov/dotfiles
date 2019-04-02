@@ -1,0 +1,24 @@
+[user]
+	email = eugene.morozov@gmail.com
+	name = Eugene Morozov
+	signingkey = 3FD81BB20ED80231
+[core]
+	autocrlf = input
+[merge]
+	tool = meld
+	ff = only
+[fetch]
+	prune = true
+[push]
+	default = simple
+[stash]
+	showPatch = true
+[log]
+	decorate = full
+[commit]
+	gpgsign = true
+[alias]
+	lg = log --color --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	co = checkout
+	st = status
+	pf = push --force-with-lease
