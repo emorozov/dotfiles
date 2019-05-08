@@ -1,10 +1,10 @@
 URxvt.scrollBar: false
 URxvt*borderless: true
 
-URxvt.font: xft:Fira Code:size=12,style=medium
-URxvt.boldFont: xft:Fira Code:size=12,style=bold
-URxvt.italicFont: xft:Fira Code:size=12,style=bold
-URxvt.boldItalicFont: xft:Fira Code:size=12,style=bold
+URxvt.font: xft:Fira Code:size=11,style=medium
+URxvt.boldFont: xft:Fira Code:size=11,style=bold
+URxvt.italicFont: xft:Fira Code:size=11,style=bold
+URxvt.boldItalicFont: xft:Fira Code:size=11,style=bold
 
 URxvt*background: black
 URxvt*foreground: white
