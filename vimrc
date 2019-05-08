@@ -1,8 +1,11 @@
+set nocompatible
 set expandtab
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set autoindent
+
+filetype plugin on
 syntax on
 let python_highlight_all=1
 
@@ -29,3 +32,4 @@ au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
 set clipboard=unnamed
 nnoremap <expr> p (v:register == '"' && &clipboard =~ 'unnamed' ? '"*p' : '"' . v:register . 'p')
 
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
