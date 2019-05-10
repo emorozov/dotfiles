@@ -23,3 +23,5 @@
 	co = checkout
 	st = status
 	pf = push --force-with-lease
+        pull = pull --ff-only
+
