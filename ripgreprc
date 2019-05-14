@@ -4,4 +4,7 @@
 --type-add
 web:*.{html,css,js}*
 
+# Use colors even when piping the output with less
+--color=always
+
 --smart-case
