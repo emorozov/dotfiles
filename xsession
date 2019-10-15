@@ -6,7 +6,7 @@ eval $(ssh-agent)
 
 feh --bg-scale ~/wallpaper.jpg
 slstatus &
-udiskie &
+udiskie -t &
 dunst &
 urxvtd -q -o -f
 xss-lock slock &
