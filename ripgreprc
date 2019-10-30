@@ -4,6 +4,9 @@
 --type-add
 web:*.{html,css,js}*
 
+--type-add
+jsx:*.jsx
+
 # Use colors even when piping the output with less
 --color=always
 
