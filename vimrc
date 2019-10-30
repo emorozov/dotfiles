@@ -33,3 +33,8 @@ set clipboard=unnamed
 nnoremap <expr> p (v:register == '"' && &clipboard =~ 'unnamed' ? '"*p' : '"' . v:register . 'p')
 
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+set nu rnu
+
+hi CursorLineNr   cterm=bold ctermfg=none guibg=#222222 gui=none
+hi LineNr         ctermfg=DarkMagenta guifg=#2b506e guibg=#000000
