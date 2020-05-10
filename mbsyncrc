@@ -1,0 +1,28 @@
+IMAPAccount yandex
+Host imap.yandex.com
+User jmv@emorozov.net
+# To store the password in an encrypted file use PassCmd instead of Pass
+#PassCmd "pass email/work"
+PassCmd "gpg -dq ~/.config/mbsync-yandex-secret.gpg"
+Port 993
+SSLType IMAPS
+#AuthMechs LOGIN
+
+IMAPStore yandex-remote
+Account yandex
+
+MaildirStore yandex-local
+# Copy folder hierarchy
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/Maildir/yandex/
+Inbox ~/Maildir/yandex/Inbox
+
+Channel yandex
+Master :yandex-remote:
+Slave :yandex-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
