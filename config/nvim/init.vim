@@ -61,6 +61,9 @@ hi LineNr         ctermfg=DarkMagenta guifg=#2b506e guibg=#000000
 call plug#begin('~/.vim/plugged')
 
 Plug 'ledger/vim-ledger'
+Plug 'vimwiki/vimwiki'
+Plug 'rafi/awesome-vim-colorschemes'
 
 call plug#end()
 
+colorscheme gotham256
