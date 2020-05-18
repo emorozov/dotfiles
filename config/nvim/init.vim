@@ -62,6 +62,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'ledger/vim-ledger'
 Plug 'vimwiki/vimwiki'
+Plug 'cespare/vim-toml'
 Plug 'rafi/awesome-vim-colorschemes'
 
 call plug#end()
