@@ -23,7 +23,8 @@
 	amend = commit --amend --no-edit --date=now -a
 	lg = log --color --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	co = checkout
-	st = status
+	st = status -sb
 	pf = push --force-with-lease
         pull = pull --ff-only
-
+        in = !git fetch && git log --oneline --graph ..@{u}
+        out = log --oneline --graph @{u}..
