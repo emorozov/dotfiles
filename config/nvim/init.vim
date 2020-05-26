@@ -64,6 +64,7 @@ Plug 'ledger/vim-ledger'
 Plug 'vimwiki/vimwiki'
 Plug 'cespare/vim-toml'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'dag/vim-fish'
 
 call plug#end()
 
