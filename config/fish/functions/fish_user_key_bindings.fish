@@ -7,6 +7,8 @@ end
 
 
 function fish_user_key_bindings
-    bind \cr reverse_history_search
     fish_vi_key_bindings
+    bind \cr reverse_history_search
+    bind -M insert \cr reverse_history_search
+    bind -M insert \cf forward-char
 end
