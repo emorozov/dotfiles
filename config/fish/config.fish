@@ -5,22 +5,14 @@ if not functions -q fisher
 end
 
 
-function reverse_history_search
-  history | fzf --no-sort | read -l command
-  if test $command
-    commandline -rb $command
-  end
-end
-
-
-function fish_user_key_bindings
-  bind \cr reverse_history_search
-end
-
-
 # bobthefish prompt configuration
 set -g theme_display_date no
 set -g theme_color_scheme solarized
+
+# vi mode customization
+set fish_cursor_default block
+set fish_cursor_insert line
+set fish_cursor_replace_one underscore
 
 status --is-interactive; and source (pyenv init -|psub)
 
