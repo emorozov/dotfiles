@@ -65,7 +65,19 @@ Plug 'vimwiki/vimwiki'
 Plug 'cespare/vim-toml'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'dag/vim-fish'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
 colorscheme gotham256
+
+
+" fzf config
+nnoremap <C-p> :Files<cr>
+let g:fzf_action = {
+\ 'ctrl-t': 'tab split',
+\ 'ctrl-i': 'split',
+\ 'ctrl-s': 'vsplit' }
+let g:fzf_layout = { 'down': '~20%' }
+
