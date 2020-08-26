@@ -25,6 +25,7 @@
 	co = checkout
 	st = status -sb
 	pf = push --force-with-lease
-        pull = pull --ff-only
         in = !git fetch && git log --oneline --graph ..@{u}
         out = log --oneline --graph @{u}..
+[pull]
+	ff = only
