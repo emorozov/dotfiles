@@ -67,6 +67,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'dag/vim-fish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -80,4 +81,22 @@ let g:fzf_action = {
 \ 'ctrl-i': 'split',
 \ 'ctrl-s': 'vsplit' }
 let g:fzf_layout = { 'down': '~20%' }
+
+" EasyMotion config
+" let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
