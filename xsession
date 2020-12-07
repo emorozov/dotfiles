@@ -9,10 +9,14 @@ feh --bg-scale ~/wallpaper.jpg
 slstatus &
 udiskie -t &
 dunst &
-urxvtd -q -o -f
+
+xset dpms 3000 4800 4800
+xset s 2700
 xss-lock slock &
 
 xrdb ~/.Xresources
+
+(while true; do notify-send -u low "  Do some exercise  "; sleep $(( 60 * (20 + $RANDOM % 40) )); done) &
 
 exec dwm
 
