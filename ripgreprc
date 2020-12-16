@@ -11,6 +11,9 @@ jsx:*.jsx
 po:*.po
 
 --type-add
+yaml:*.yml
+
+--type-add
 urls:urls.py
 
 # Use colors even when piping the output with less
