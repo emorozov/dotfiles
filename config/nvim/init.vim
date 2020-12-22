@@ -4,12 +4,12 @@ set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set autoindent
+set selection=exclusive
 
 set termguicolors
 filetype plugin on
 syntax on
 let python_highlight_all=1
-
 
 " Protect changes between writes. Default values of
 " updatecount (200 keystrokes) and updatetime
@@ -44,13 +44,12 @@ set ruler
 set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 autocmd FileType text setlocal textwidth=78 formatoptions+=t infercase
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 " x-Window clipboard settings for neovim
 set clipboard=unnamed
 nnoremap <expr> p (v:register == '"' && &clipboard =~ 'unnamed' ? '"*p' : '"' . v:register . 'p')
-
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 "set nu rnu
 
@@ -61,13 +60,14 @@ hi LineNr         ctermfg=DarkMagenta guifg=#2b506e guibg=#000000
 call plug#begin('~/.vim/plugged')
 
 Plug 'ledger/vim-ledger'
-Plug 'vimwiki/vimwiki'
 Plug 'cespare/vim-toml'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'dag/vim-fish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
