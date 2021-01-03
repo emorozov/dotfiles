@@ -68,6 +68,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -99,4 +100,7 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" ack.vim config
+let g:ackprg = 'rg --vimgrep --color=never'
 
