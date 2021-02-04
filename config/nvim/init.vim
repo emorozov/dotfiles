@@ -48,7 +48,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 " x-Window clipboard settings for neovim
-set clipboard=unnamed
+set clipboard=unnamedplus
 nnoremap <expr> p (v:register == '"' && &clipboard =~ 'unnamed' ? '"*p' : '"' . v:register . 'p')
 
 "set nu rnu
@@ -69,6 +69,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'mileszs/ack.vim'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
