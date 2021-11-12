@@ -16,6 +16,9 @@ yaml:*.yml
 --type-add
 urls:urls.py
 
+--type-add
+proto:*.proto
+
 # Use colors even when piping the output with less
 --color=always
 
