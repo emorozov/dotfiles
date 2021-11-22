@@ -2,6 +2,8 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+(setq org-mobile-directory "~/Yandex.Disk/org/")
+
 (modify-syntax-entry ?_ "w" (standard-syntax-table))
 
 (setq evil-emacs-state-modes nil)
@@ -9,6 +11,8 @@
 (setq evil-motion-state-modes nil)
 (require 'evil)
 (evil-mode 1)
+
+(tool-bar-mode -1)
 
 (set-face-attribute 'default nil :font "Iosevka Term" :height 120)
 (custom-set-variables
