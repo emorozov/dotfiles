@@ -1,6 +1,8 @@
 --max-columns=150
 --max-columns-preview
 
+--ignore-file=~/.rgignore
+
 --type-add
 web:*.{html,css,js}*
 
