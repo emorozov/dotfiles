@@ -6,7 +6,8 @@
 [core]
 	autocrlf = input
 	pager = delta
-        excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
+	quotepath = off
 [merge]
 	tool = meld
 [fetch]
@@ -29,14 +30,22 @@
         out = log --oneline --graph @{u}..
         branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
         delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
+        find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+        show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 [pull]
 	ff = only
 [delta]
     plus-color = "#012800"
     minus-color = "#340001"
     syntax-theme = Monokai Extended
-    features = side-by-side line-numbers
+    #features = side-by-side line-numbers
+    features = line-numbers
     whitespace-error-style = 22 reverse
     #syntax-theme = GitHub
 [interactive]
     diffFilter = delta --color-only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
