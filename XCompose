@@ -1,0 +1,11 @@
+# import the default Compose file for your locale
+include "%L"
+
+<Multi_key> <minus> <Right> <Right> : "→"
+<Multi_key> <minus> <Left> <Left> : "←"
+<Multi_key> <minus> <Up> <Up> : "↑"
+<Multi_key> <minus> <Down> <Down> : "↓"
+
+<Multi_key> <bar> <greater>  : "▸"
+<Multi_key> <less> <bar>  : "◄"
+<Multi_key> <o> <o>  : "•"
