@@ -1,7 +1,7 @@
 --max-columns=150
 --max-columns-preview
 
---ignore-file=~/.rgignore
+--ignore-file=/home/jmv/.rgignore
 
 --type-add
 web:*.{html,css,js}*
