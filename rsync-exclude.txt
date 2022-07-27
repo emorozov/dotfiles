@@ -1,8 +1,14 @@
+.o
+.a
+.so*
 .npm*
+qemu
+VirtualBox VMs
 .cache
 .cargo
 .pyenv
 .virtualenvs
+.mozilla
 node_modules
 .local/share/virtualenv*
 .local/share/TelegramDesktop
@@ -11,3 +17,12 @@ target/debug
 favicons.sqlite
 .wine
 .config/Slack
+.config/yandex-browser-beta
+.config/Microsoft
+*-build
+Data Folder
+out
+Yandex.Disk
+Trash
+go
+
