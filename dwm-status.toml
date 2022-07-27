@@ -1,11 +1,11 @@
-order = ["audio", "battery", "cpu_load", "network", "time"]
+order = ["audio", "cpu_load", "network", "time", "keymap"]
 separator = "    "
 
 [audio]
 control = "Master"
-mute = "ﱝ"
+mute = "🔇"
 template = "{ICO} {VOL}%"
-icons = ["奄", "奔", "墳"]
+icons = ["🔈", "🔉", "🔊"]
 
 [backlight]
 device = "intel_backlight"
@@ -13,14 +13,14 @@ template = "L {BL}%"
 icons = []
 
 [battery]
-charging = "▲"
+charging = "⚡"
 discharging = "▼"
 enable_notifier = true
 notifier_critical = 10
 notifier_levels = [2, 5, 10, 15, 20]
 separator = " · "
 no_battery = ""
-icons = ["", "", "", "", "", "", "", "", "", "", ""]
+icons = ["", "", "", "", "", "", "", "", "", "", "🔋"]
 
 [cpu_load]
 template = "{CL1} {CL5} {CL15}"
@@ -28,8 +28,12 @@ update_interval = 20
 
 [network]
 no_value = "NA"
-template = "{IPv4} · {ESSID}"
+template = "🌐 {IPv4} 📶 {ESSID}"
 
 [time]
-format = "%Y-%m-%d %H:%M"
+format = "📅 %Y-%m-%d ⌚ %H:%M"
 update_seconds = false
+
+[keymap]
+template = "{FLAG}"
+flags = ["󾓦", "󾓬"]
