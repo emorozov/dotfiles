@@ -5,12 +5,11 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 eval $(ssh-agent)
 
+xrandr --listmonitors | fgrep HDMI && xrandr --output eDP1 --off
 feh --bg-scale ~/wallpaper.jpg
 dwm-status ~/dotfiles/dwm-status.toml &
 udiskie -t &
 dunst &
-
-xset dpms 3000 4800 4800
 
 xrdb ~/.Xresources
 
