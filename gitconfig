@@ -4,6 +4,7 @@
 	signingkey = 3FD81BB20ED80231
 
 [core]
+	editor = nvim
 	autocrlf = input
 	pager = delta
 	excludesfile = ~/.gitignore
@@ -35,8 +36,6 @@
 [pull]
 	ff = only
 [delta]
-    plus-color = "#012800"
-    minus-color = "#340001"
     syntax-theme = Monokai Extended
     #features = side-by-side line-numbers
     features = line-numbers
