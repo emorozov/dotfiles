@@ -10,6 +10,12 @@ return require('packer').startup(function()
 
   use { { 'nvim-orgmode/orgmode.nvim', config = [[require('config.orgmode')]] }, 'akinsho/org-bullets.nvim' }
 
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
+
+  use 'nvim-telescope/telescope-symbols.nvim'
+
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
   use 'neovim/nvim-lspconfig'
 
   use {
@@ -17,6 +23,20 @@ return require('packer').startup(function()
     config = function()
       require('Comment').setup()
     end,
+  }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('lualine').setup {
+        options = {
+          icons_enabled = false,
+          theme = 'onedark',
+          component_separators = '|',
+          section_separators = '',
+        },
+      }
+    end
   }
 
   use {
@@ -31,6 +51,13 @@ return require('packer').startup(function()
         }
       }
     end,
+  }
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
   }
 
   if packer_bootstrap then
