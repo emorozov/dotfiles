@@ -68,9 +68,9 @@ require('telescope').setup {
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
 
-map('n', '<leader>fd', ':Telescope find_files<CR>', { noremap = true })
-map('n', '<leader>ff', ':Telescope live_grep<CR>', { noremap = true })
-map('n', '<leader>fg', ':Telescope git_commits<CR>', { noremap = true })
-map('n', '<leader>fG', ':Telescope git_branches<CR>', { noremap = true })
-map('n', '<leader>fe', ':lua require(\'telescope.builtin\').symbols({ sources = { \'emoji\', \'gitmoji\'}})<CR>', { noremap = true })
-
+map('n', '<leader>sf', ':Telescope find_files<CR>', { noremap = true })
+map('n', '<leader>sg', ':Telescope live_grep<CR>', { noremap = true })
+map('n', '<leader>sc', ':Telescope git_commits<CR>', { noremap = true })
+map('n', '<leader>sb', ':Telescope git_branches<CR>', { noremap = true })
+map('n', '<leader>sw', ':Telescope grep_string<CR>', { noremap = true })
+map('n', '<leader>ss', ':lua require(\'telescope.builtin\').symbols({ sources = { \'emoji\', \'gitmoji\'}})<CR>', { noremap = true })
