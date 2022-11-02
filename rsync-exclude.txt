@@ -2,9 +2,11 @@
 .a
 .so*
 .npm*
+.ova
 qemu
 VirtualBox VMs
 .cache
+.mypy_cache
 .cargo
 .pyenv
 .virtualenvs
@@ -25,4 +27,4 @@ out
 Yandex.Disk
 Trash
 go
-
+Downloads

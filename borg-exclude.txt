@@ -1,0 +1,39 @@
+*.o
+*.a
+*.so
+*.mo
+*.pyc
+*.so.*
+*.npm*
+*.ova
+**/__pycache__
+**/qemu
+**/VirtualBox VMs
+**/.cache
+**/.mypy_cache
+**/.cargo
+**/.pyenv
+**/.virtualenvs
+**/.mozilla
+**/node_modules
+**/.local/share/virtualenv*
+**/.local/share/TelegramDesktop
+**/target/debug
+**/.firefox/*/storage
+**/favicons.sqlite
+**/.wine
+**/.config/Slack
+**/.config/yandex-browser-beta
+**/.config/Microsoft
+**/.config/Code - OSS
+**/.config/JetBrains
+**/.vscode-oss
+**/*-build
+**/Data Folder
+**/out
+**/Yandex.Disk
+**/Trash
+**/go
+**/Downloads
+**/.thumbnails
+
