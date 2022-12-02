@@ -6,7 +6,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 eval $(ssh-agent)
 
 xrandr --listmonitors | grep -F HDMI && xrandr --output eDP1 --off
-picom -b
+picom --backend glx --vsync --no-use-damage --experimental-backends -b
 feh --bg-scale ~/wallpaper.jpg
 dwm-status ~/dotfiles/dwm-status.toml &
 udiskie -t &
