@@ -15,10 +15,5 @@ set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 
 zoxide init fish | source
-status --is-interactive; and source /opt/asdf-vm/asdf.fish
-
-# For the CentOS container
-if grep -F CentOS-7 /etc/os-release
-    set -x TERM xterm-256color
-end
+starship init fish | source
 
