@@ -18,6 +18,8 @@
 **/node_modules
 **/.local/share/virtualenv*
 **/.local/share/TelegramDesktop
+**/.local/share/Zeal
+**/.local/share/Trash
 **/target/debug
 **/.firefox/*/storage
 **/favicons.sqlite
