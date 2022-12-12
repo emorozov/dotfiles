@@ -3,6 +3,9 @@
 [package]
 disabled = true
 
+[buf]
+disabled = true
+
 [python]
 detect_extensions = []
 
