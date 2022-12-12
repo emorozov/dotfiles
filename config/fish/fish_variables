@@ -3,6 +3,7 @@
 SETUVAR --export EDITOR:nvim
 SETUVAR --export FORTUNE_PATH:/usr/share/fortune\x3a/usr/share/fortune/ru
 SETUVAR --export LESS:\x2diMSx4\x20\x2dFXR
+SETUVAR --export LESSOPEN:\x7c/usr/bin/lesspipe\x2esh\x20\x25s
 SETUVAR --export LESS_TERMCAP_mb:\x1b\x5b1\x3b32m
 SETUVAR --export LESS_TERMCAP_md:\x1b\x5b1\x3b32m
 SETUVAR --export LESS_TERMCAP_me:\x1b\x5b0m
