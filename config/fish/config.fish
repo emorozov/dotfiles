@@ -14,6 +14,9 @@ set fish_cursor_default block
 set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 
-zoxide init fish | source
-starship init fish | source
+if status --is-interactive
+    zoxide init fish | source
+    source /opt/asdf-vm/asdf.fish
+    starship init fish | source
+end
 
