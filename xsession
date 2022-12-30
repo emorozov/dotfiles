@@ -15,6 +15,7 @@ feh --bg-scale ~/wallpaper.jpg
 dwm-status ~/dotfiles/dwm-status.toml &
 udiskie -t &
 dunst &
+tapper &
 
 xrdb ~/.Xresources
 
