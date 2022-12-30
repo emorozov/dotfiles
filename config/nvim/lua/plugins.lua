@@ -2,6 +2,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use 'dag/vim-fish'
   use 'joshdick/onedark.vim'
   use 'powerman/vim-plugin-ruscmd'
   use 'rcarriga/nvim-notify'
