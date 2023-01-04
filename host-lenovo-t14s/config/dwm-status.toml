@@ -1,4 +1,4 @@
-order = ["audio", "cpu_load", "network", "time", "keymap"]
+order = ["audio", "cpu_load", "network", "time", "battery", "keymap"]
 separator = "    "
 
 [audio]

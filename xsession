@@ -12,7 +12,7 @@ end
 xrandr --listmonitors | grep -F HDMI && xrandr --output eDP1 --off
 picom --backend glx --vsync --no-use-damage --experimental-backends -b
 feh --bg-scale ~/wallpaper.jpg
-dwm-status ~/dotfiles/dwm-status.toml &
+dwm-status ~/.config/dwm-status.toml &
 udiskie -t &
 dunst &
 tapper &
