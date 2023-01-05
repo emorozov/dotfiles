@@ -9,3 +9,6 @@ include "%L"
 <Multi_key> <bar> <greater>  : "▸"
 <Multi_key> <less> <bar>  : "◄"
 <Multi_key> <o> <o>  : "•"
+
+<Multi_key> <minus> <r> : "₽"
+
