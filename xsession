@@ -9,7 +9,7 @@ if test -z (pgrep ssh-agent)
   set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
 end
 
-xrandr --listmonitors | grep -F HDMI && xrandr --output eDP1 --off
+autorandr -c
 picom --backend glx --vsync --no-use-damage --experimental-backends -b
 feh --bg-scale ~/wallpaper.jpg
 dwm-status ~/.config/dwm-status.toml &
@@ -20,6 +20,9 @@ xscreensaver -no-splash &
 alacritty &
 
 xrdb ~/.Xresources
+
+# Automatically change monitor configuration when change in outputs is detected
+srandrd ~/bin/monitor-change-hook
 
 exec dwm
 
