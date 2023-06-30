@@ -16,7 +16,7 @@ set fish_cursor_replace_one underscore
 
 if status --is-interactive
     zoxide init fish | source
-    source /opt/asdf-vm/asdf.fish
+    rtx activate fish | source
     starship init fish | source
 end
 
