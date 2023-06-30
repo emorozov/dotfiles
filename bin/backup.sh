@@ -23,7 +23,7 @@ borg create                         \
     --exclude-from ~/dotfiles/borg-exclude.txt \
                                     \
     ::'{hostname}-{now}'            \
-    ~/
+    ~/ /etc
 
 backup_exit=$?
 
