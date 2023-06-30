@@ -10,7 +10,6 @@ if test -z (pgrep ssh-agent)
 end
 
 autorandr -c
-picom --backend glx --vsync --no-use-damage --experimental-backends -b
 feh --bg-scale ~/wallpaper.jpg
 dwm-status ~/.config/dwm-status.toml &
 udiskie -t &
@@ -20,6 +19,7 @@ xscreensaver -no-splash &
 alacritty &
 
 xrdb ~/.Xresources
+xset r rate 250 30
 
 # Automatically change monitor configuration when change in outputs is detected
 srandrd ~/bin/monitor-change-hook
