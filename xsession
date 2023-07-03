@@ -9,6 +9,9 @@ if test -z (pgrep ssh-agent)
   set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
 end
 
+# Gives gnome-keyring information about X11 environment
+dbus-update-activation-environment --all
+
 autorandr -c
 feh --bg-scale ~/wallpaper.jpg
 dwm-status ~/.config/dwm-status.toml &
