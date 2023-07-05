@@ -4,6 +4,9 @@ if not functions -q fisher
     fish -c fisher
 end
 
+fish_add_path ~/bin
+fish_add_path /opt/vkteams
+
 
 # bobthefish prompt configuration
 set -g theme_display_date no
