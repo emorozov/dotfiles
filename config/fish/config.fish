@@ -18,6 +18,8 @@ set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 
 if status --is-interactive
+    source ~/.config/fish/conf.d/abbreviations.fish
+
     zoxide init fish | source
     rtx activate fish | source
     starship init fish | source
