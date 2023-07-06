@@ -1,4 +1,4 @@
-abbr --add gs git status
+abbr --add gs git status -sb
 abbr --add gco git checkout
 abbr --add ga git add
 abbr --add gc git commit
