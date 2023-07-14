@@ -1,0 +1,3 @@
+[submodule "config/fish/fish-work"]
+	path = config/fish/fish-work
+	url = gitea@emorozov.net:jmv/fish-work.git
