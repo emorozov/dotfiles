@@ -6,6 +6,7 @@
 *.so.*
 *.npm*
 *.ova
+.xsession-errors
 **/__pycache__
 **/qemu
 **/VirtualBox VMs
@@ -20,6 +21,7 @@
 **/.local/share/TelegramDesktop
 **/.local/share/Zeal
 **/.local/share/Trash
+**/.local/share/vkteams
 **/target/debug
 **/.firefox/*/storage
 **/favicons.sqlite
@@ -29,6 +31,7 @@
 **/.config/Microsoft
 **/.config/Code - OSS
 **/.config/JetBrains
+**/.config/VK Teams
 **/.vscode-oss
 **/*-build
 **/Data Folder
