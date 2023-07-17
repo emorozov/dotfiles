@@ -7,6 +7,8 @@ end
 fish_add_path ~/bin
 fish_add_path /opt/vkteams
 
+set fish_function_path ~/.config/fish/fish-work/uma/ $fish_function_path
+
 
 # bobthefish prompt configuration
 set -g theme_display_date no
