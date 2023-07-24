@@ -21,6 +21,7 @@ set fish_cursor_replace_one underscore
 
 if status --is-interactive
     source ~/.config/fish/conf.d/abbreviations.fish
+    source ~/.config/fish/fish-work/uma/uma-abbrevs.fish
 
     zoxide init fish | source
     rtx activate fish | source
