@@ -9,6 +9,7 @@ abbr --add --position command gso git stash pop
 abbr --add --position command de docker exec -it
 abbr --add --position command n nvim
 abbr -a g grep
+abbr -a h hyperfine
 abbr -a --position command x xz -9ev -T0
 abbr -a --position command u xzcat -v
 abbr -a --position anywhere --set-cursor l "%| less"
