@@ -854,3 +854,7 @@ key_bindings:
 
   # Print all received window events.
   #print_events: false
+  
+import:
+  - ~/.alacritty-colorscheme/themes/afterglow.yaml
+
