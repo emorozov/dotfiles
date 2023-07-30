@@ -7,6 +7,7 @@ return require('packer').startup(function()
   use 'powerman/vim-plugin-ruscmd'
   use 'rcarriga/nvim-notify'
   use 'ledger/vim-ledger'
+  use 'SidOfc/mkdx'
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = [[require('config.treesitter')]] }
 
