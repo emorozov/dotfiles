@@ -13,4 +13,4 @@ abbr -a h hyperfine
 abbr -a --position command x xz -9ev -T0
 abbr -a --position command u xzcat -v
 abbr -a --position anywhere --set-cursor l "%| less"
-abbr -a --position anywhere t "&| tee"
+abbr -a --position anywhere te "&| tee"
