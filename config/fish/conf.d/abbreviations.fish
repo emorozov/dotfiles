@@ -13,6 +13,7 @@ abbr -a g grep
 abbr -a h hyperfine
 abbr -a --position command x xz -9ev -T0
 abbr -a --position command u xzcat -v
-abbr -a --position command e "nvim (rg -n --color=never . | fzf | awk -F: '{ print \$1, \"+\"\$2 }' | string split ' ')"
+abbr -a --position command e "nvim (bfs | fzf)"
+abbr -a --position command f "nvim (rg -n --color=never . | fzf | awk -F: '{ print \$1, \"+\"\$2 }' | string split ' ')"
 abbr -a --position anywhere --set-cursor l "%| less"
 abbr -a --position anywhere te "&| tee"
