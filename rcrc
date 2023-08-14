@@ -1,3 +1,4 @@
-EXCLUDES=LICENSE
+EXCLUDES="LICENSE xorg.conf.d"
 DOTFILES_DIRS=$HOME/dotfiles
 UNDOTTED="bin"
+SYMLINK_DIRS="config/autorandr config/fish"
