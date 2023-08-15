@@ -20,6 +20,7 @@ dunst &
 tapper &
 xscreensaver -no-splash &
 alacritty &
+pause-notifications.sh &
 
 xrdb ~/.Xresources
 xset r rate 250 30
