@@ -15,5 +15,5 @@ abbr -a --position command x xz -9ev -T0
 abbr -a --position command u xzcat -v
 abbr -a --position command e "nvim (bfs -exclude -name .git -exclude -name .cache -exclude -name .local -exclude -name .zoom | fzf)"
 abbr -a --position command f "nvim (rg -n --color=never . | fzf | awk -F: '{ print \$1, \"+\"\$2 }' | string split ' ')"
-abbr -a --position anywhere --set-cursor l "%| less"
+abbr -a --position anywhere --set-cursor le "%| less"
 abbr -a --position anywhere te "&| tee"
