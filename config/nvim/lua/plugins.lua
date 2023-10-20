@@ -89,6 +89,7 @@ require("lazy").setup({
       },
     },
   },
+
   { 
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
@@ -112,10 +113,32 @@ require("lazy").setup({
       }
     }
   },
+
   { "nvim-telescope/telescope-fzf-native.nvim",
     build = "make",
     config = function()
       require('telescope').load_extension('fzf')
+    end
+  },
+
+  {
+    "TimUntersberger/neogit",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local neogit = require('neogit')
+      neogit.setup {
+        signs = {
+          section = { "﬌", "" },
+          item = { "﬌", "" },
+        }
+      }
+    end,
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require('gitsigns').setup()
     end
   },
 })
@@ -149,26 +172,6 @@ require("lazy").setup({
 --   }
 --
 --
---   use {
---     'TimUntersberger/neogit',
---     requires = 'nvim-lua/plenary.nvim',
---     config = function()
---       local neogit = require('neogit')
---       neogit.setup {
---         signs = {
---           section = { "﬌", "" },
---           item = { "﬌", "" },
---         }
---       }
---     end,
---   }
---
---   use {
---     'lewis6991/gitsigns.nvim',
---     config = function()
---       require('gitsigns').setup()
---     end
---   }
 --
 --   if packer_bootstrap then
 --     require('packer').sync()
