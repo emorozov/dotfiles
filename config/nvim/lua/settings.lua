@@ -15,6 +15,10 @@ opt.smartcase = true
 
 vim.opt.listchars = "tab:➜-,space:·,trail:·,eol:¶"
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 cmd([[
 filetype indent plugin on
 syntax enable
@@ -62,4 +66,8 @@ map('n', '<leader>sb', ':Telescope git_branches<CR>', { noremap = true })
 map('n', '<leader>sw', ':Telescope grep_string<CR>', { noremap = true })
 map('n', '<leader>ss', ':lua require(\'telescope.builtin\').symbols({ sources = { \'emoji\', \'gitmoji\'}})<CR>', { noremap = true })
 map('n', '<leader>sd', ':Telescope lsp_document_symbols<CR>', { noremap = true })
+map('n', '<F10>', ':TagbarToggle<CR>', { noremap = true })
   -- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
+
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {desc = 'Goto Definition'})
+

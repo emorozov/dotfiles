@@ -137,6 +137,15 @@ require("lazy").setup({
       require('gitsigns').setup()
     end
   },
+  "f-person/git-blame.nvim",
+  "preservim/tagbar",
+  {
+    "nvim-tree/nvim-tree.lua",
+    init = function()
+      require('nvim-tree').setup()
+    end,
+  },
+  "nvim-tree/nvim-web-devicons",
 })
 
 -- return require('packer').startup(function()
