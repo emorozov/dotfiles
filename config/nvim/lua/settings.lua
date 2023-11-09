@@ -3,11 +3,11 @@ local exec = vim.api.nvim_exec
 local g = vim.g
 local opt = vim.opt
 
-opt.colorcolumn = '119'
+opt.colorcolumn = "119"
 opt.number = true
 opt.relativenumber = true
 opt.undofile = true
-opt.selection = 'exclusive'
+opt.selection = "exclusive"
 
 -- Case insensitive searching UNLESS /C or capital in search
 opt.ignorecase = true
@@ -28,46 +28,54 @@ opt.shiftwidth = 4
 opt.tabstop = 4
 opt.smartindent = true
 
-g.mapleader = ' '
+g.mapleader = " "
 
 cmd [[
 autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja setlocal shiftwidth=2 tabstop=2
 ]]
 
-opt.inccommand = 'split'
+opt.inccommand = "split"
 
 -- Highlight yanked text for a moment
-exec([[
+exec(
+    [[
 augroup YankHighlight
 autocmd!
 autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
 augroup end
-]], false)
+]],
+    false
+)
 
 opt.termguicolors = true
-opt.guifont = { "JetBrains Mono", ":h10" }
-cmd'colorscheme onedark'
+opt.guifont = {"JetBrains Mono", ":h10"}
+cmd "colorscheme onedark"
 
-require'lspconfig'.pyright.setup{}
+require "lspconfig".pyright.setup {}
 
 local function map(mode, bind, exec, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend('force', options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, bind, exec, opts)
+    local options = {noremap = true, silent = true}
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, bind, exec, opts)
 end
 
-map('n', '<leader>sf', ':Telescope git_files<CR>', { noremap = true })
-map('n', '<leader><space>', ':Telescope buffers<CR>', { noremap = true })
-map('n', '<leader>sg', ':Telescope live_grep<CR>', { noremap = true })
-map('n', '<leader>sc', ':Telescope git_commits<CR>', { noremap = true })
-map('n', '<leader>sb', ':Telescope git_branches<CR>', { noremap = true })
-map('n', '<leader>sw', ':Telescope grep_string<CR>', { noremap = true })
-map('n', '<leader>ss', ':lua require(\'telescope.builtin\').symbols({ sources = { \'emoji\', \'gitmoji\'}})<CR>', { noremap = true })
-map('n', '<leader>sd', ':Telescope lsp_document_symbols<CR>', { noremap = true })
-map('n', '<F10>', ':TagbarToggle<CR>', { noremap = true })
-  -- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
+map("n", "<leader>sf", ":Telescope git_files<CR>", {noremap = true})
+map("n", "<leader><space>", ":Telescope buffers<CR>", {noremap = true})
+map("n", "<leader>sg", ":Telescope live_grep<CR>", {noremap = true})
+map("n", "<leader>sc", ":Telescope git_commits<CR>", {noremap = true})
+map("n", "<leader>sb", ":Telescope git_branches<CR>", {noremap = true})
+map("n", "<leader>sw", ":Telescope grep_string<CR>", {noremap = true})
+map(
+    "n",
+    "<leader>ss",
+    ":lua require('telescope.builtin').symbols({ sources = { 'emoji', 'gitmoji'}})<CR>",
+    {noremap = true}
+)
+map("n", "<leader>sd", ":Telescope lsp_document_symbols<CR>", {noremap = true})
+map("n", "<F10>", ":TagbarToggle<CR>", {noremap = true})
+-- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 
-vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {desc = 'Goto Definition'})
-
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {desc = "Goto Definition"})
+-- vim.keymap.set('n', '<leader>bd', function() require('mini.bufremove').delete(0, false) end, {desc = 'Delete Buffer'})
