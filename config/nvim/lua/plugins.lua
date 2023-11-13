@@ -192,17 +192,6 @@ require("lazy").setup(
         {
             "echasnovski/mini.bufremove",
             opts = {},
-            -- stylua: ignore
-            keys = function(_, keys)
-                local delete_buffer = function()
-                    require("mini.bufremove").delete(0, false)
-                end
-
-                local mappings = {
-                    {"<leader>bd", delete_buffer, desc = "Delete Buffer"}
-                }
-                return vim.list_extend(mappings, keys)
-            end
         }
     }
 )

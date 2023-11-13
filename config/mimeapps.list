@@ -9,8 +9,8 @@ x-scheme-handler/webcal=userapp-Thunderbird-3AJRZ1.desktop
 text/calendar=userapp-Thunderbird-3AJRZ1.desktop
 application/x-extension-ics=userapp-Thunderbird-3AJRZ1.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-3AJRZ1.desktop
-x-scheme-handler/jetbrains-gateway=jetbrains-gateway.desktop
 text/plain=neovide.desktop
+text/markdown=neovide.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-BQ9QE1.desktop;org.telegram.desktop.desktop;

@@ -3,7 +3,7 @@ local exec = vim.api.nvim_exec
 local g = vim.g
 local opt = vim.opt
 
-opt.colorcolumn = "119"
+opt.colorcolumn = "+1"
 opt.number = true
 opt.relativenumber = true
 opt.undofile = true
@@ -78,4 +78,4 @@ map("n", "<F10>", ":TagbarToggle<CR>", {noremap = true})
 -- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {desc = "Goto Definition"})
--- vim.keymap.set('n', '<leader>bd', function() require('mini.bufremove').delete(0, false) end, {desc = 'Delete Buffer'})
+vim.keymap.set('n', '<leader>bd', function() require('mini.bufremove').delete(0, false) end, {desc = 'Delete Buffer'})
