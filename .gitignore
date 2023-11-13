@@ -1,3 +1,9 @@
 mbsyncrc
 packer_compiled.lua
 lazy-lock.json
+config/fish/fish_variables
+config/fish/functions/getopts.fish
+config/fish/functions/choices.fish
+config/fish/conf.d/done.fish
+config/fish/functions/anicode.fish
+config/fish/functions/fisher.fish
