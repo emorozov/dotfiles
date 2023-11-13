@@ -1,3 +1,3 @@
-function b --wraps='buku --suggest' --description 'alias b=buku --suggest'
-  buku --suggest $argv; 
+function b --wraps='buku' --description 'alias b=buku'
+  /usr/bin/python /usr/bin/buku $argv
 end
