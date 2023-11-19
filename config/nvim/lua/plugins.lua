@@ -192,42 +192,13 @@ require("lazy").setup(
         {
             "echasnovski/mini.bufremove",
             opts = {},
-        }
+        },
+        {
+          "hrsh7th/nvim-cmp",
+          dependencies = { 
+            "hrsh7th/cmp-nvim-lsp"
+          },
+      }
     }
 )
 
--- return require('packer').startup(function()
---   use 'wbthomason/packer.nvim'
---   use 'dag/vim-fish'
---   use 'joshdick/onedark.vim'
---   use 'powerman/vim-plugin-ruscmd'
---   use 'rcarriga/nvim-notify'
---   use 'ledger/vim-ledger'
---   use 'SidOfc/mkdx'
---
---   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = [[require('config.treesitter')]] }
---
---   use { { 'nvim-orgmode/orgmode.nvim', config = [[require('config.orgmode')]] }, 'akinsho/org-bullets.nvim' }
---
---   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
---
---   use 'nvim-telescope/telescope-symbols.nvim'
---
---   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
---
---   use 'neovim/nvim-lspconfig'
---
---   use {
---     'numToStr/Comment.nvim',
---     config = function()
---       require('Comment').setup()
---     end,
---   }
---
---
---
---   if packer_bootstrap then
---     require('packer').sync()
---   end
--- end)
---
