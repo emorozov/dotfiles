@@ -136,7 +136,13 @@ require("lazy").setup(
             end
         },
         "f-person/git-blame.nvim",
-        "preservim/tagbar",
+        {
+            "preservim/tagbar",
+            config = function()
+                vim.g.tagbar_autofocus = 1
+                vim.g.tagbar_show_data_type = 1
+            end,
+        },
         {
             "nvim-tree/nvim-tree.lua",
             init = function()
