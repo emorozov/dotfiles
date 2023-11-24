@@ -1,4 +1,4 @@
-function ds
+function ,ds
     set result (docker container ls --format "{{.Names}}" | fzf)
 
     if count $argv > /dev/null

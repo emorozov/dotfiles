@@ -1,4 +1,4 @@
-function dl
+function ,dl
     set -l options (fish_opt -s f -l follow)
     argparse $options -- $argv
 

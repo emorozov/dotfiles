@@ -1,4 +1,4 @@
-function gbd -d "Delete all branches merged in current HEAD, including squashed"
+function ,gbd -d "Delete all branches merged in current HEAD, including squashed"
   # Taken from https://github.com/jhillyerd/plugin-git
   git branch --merged | \
     command grep -vE  '^\*|^\s*(master|main|develop)\s*$' | \
