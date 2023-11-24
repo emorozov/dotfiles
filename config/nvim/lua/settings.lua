@@ -61,6 +61,13 @@ local function map(mode, bind, exec, opts)
     vim.api.nvim_set_keymap(mode, bind, exec, opts)
 end
 
+-- Turn on Folding
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+-- Don't collapse by default
+-- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+vim.wo.foldlevel = 99
+
 map("n", "<leader>sf", ":Telescope git_files<CR>", {noremap = true})
 map("n", "<leader><space>", ":Telescope buffers<CR>", {noremap = true})
 map("n", "<leader>sg", ":Telescope live_grep<CR>", {noremap = true})

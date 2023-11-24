@@ -69,7 +69,8 @@ require("lazy").setup(
                     "typescript",
                     "vim",
                     "vimdoc",
-                    "yaml"
+                    "yaml",
+                    "dockerfile",
                 },
                 incremental_selection = {
                     enable = true,
