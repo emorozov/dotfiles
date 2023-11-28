@@ -48,7 +48,7 @@ augroup end
 )
 
 opt.termguicolors = true
-opt.guifont = {"JetBrains Mono", ":h10"}
+opt.guifont = {"JetBrainsMono NFP", ":h10"}
 cmd "colorscheme onedark"
 
 require "lspconfig".pyright.setup {}
