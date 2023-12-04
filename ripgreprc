@@ -25,7 +25,13 @@ models:models.py
 proto:*.proto
 
 --type-add
-docker:Dockerfile*
+dockerfile:Dockerfile*
+
+--type-add
+docker:include:dockerfile,yaml
+
+--type-add
+tests:test*
 
 # Use colors even when piping the output with less
 --color=always
