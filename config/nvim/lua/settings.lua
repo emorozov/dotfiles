@@ -13,7 +13,8 @@ opt.selection = "exclusive"
 opt.ignorecase = true
 opt.smartcase = true
 
-vim.opt.listchars = "tab:➜-,space:·,trail:·,eol:¶"
+opt.listchars = "tab:➜-,space:·,trail:·,eol:¶"
+opt.clipboard = 'unnamedplus'
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
