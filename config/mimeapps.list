@@ -11,6 +11,10 @@ application/x-extension-ics=userapp-Thunderbird-3AJRZ1.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-3AJRZ1.desktop
 text/plain=neovide.desktop
 text/markdown=neovide.desktop
+image/jpg=geeqie.desktop
+image/jpeg=geeqie.desktop
+image/png=geeqie.desktop
+inode/directory=pcmanfm-qt.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-BQ9QE1.desktop;org.telegram.desktop.desktop;
