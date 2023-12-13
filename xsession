@@ -11,6 +11,7 @@ end
 
 # Gives gnome-keyring information about X11 environment
 dbus-update-activation-environment --all
+lxqt-policykit-agent &
 
 autorandr -c
 feh --bg-scale ~/wallpaper.jpg
