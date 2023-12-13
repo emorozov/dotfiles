@@ -7,5 +7,5 @@ return {
     vim.g.tagbar_iconchars = { "", "" }
 
     vim.keymap.set("n", "<F8>", "<cmd>TagbarToggle fjc<CR>", { desc = "Toggle tagbar" })
-  end
+  end,
 }

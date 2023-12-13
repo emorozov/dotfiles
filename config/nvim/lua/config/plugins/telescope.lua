@@ -33,7 +33,12 @@ return {
     keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     keymap.set("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-    keymap.set("n", "<leader>ss", ":lua require('telescope.builtin').symbols({ sources = { 'emoji', 'gitmoji'}})<CR>", { desc = "Find emoji" })
+    keymap.set(
+      "n",
+      "<leader>ss",
+      ":lua require('telescope.builtin').symbols({ sources = { 'emoji', 'gitmoji'}})<CR>",
+      { desc = "Find emoji" }
+    )
     keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
   end,
 }
