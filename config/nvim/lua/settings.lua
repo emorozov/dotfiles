@@ -16,10 +16,6 @@ opt.smartcase = true
 opt.listchars = "tab:➜-,space:·,trail:·,eol:¶"
 opt.clipboard = 'unnamedplus'
 
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 cmd([[
 filetype indent plugin on
 syntax enable
@@ -28,8 +24,6 @@ opt.expandtab = true
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.smartindent = true
-
-g.mapleader = " "
 
 cmd [[
 autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja setlocal shiftwidth=2 tabstop=2
@@ -50,9 +44,9 @@ augroup end
 
 opt.termguicolors = true
 opt.guifont = {"JetBrainsMono NFP", ":h10"}
-cmd "colorscheme onedark"
+--cmd "colorscheme onedark"
 
-require "lspconfig".pyright.setup {}
+--require "lspconfig".pyright.setup {}
 
 local function map(mode, bind, exec, opts)
     local options = {noremap = true, silent = true}
@@ -69,21 +63,8 @@ vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 vim.wo.foldlevel = 99
 
-map("n", "<leader>sf", ":Telescope git_files<CR>", {noremap = true})
-map("n", "<leader><space>", ":Telescope buffers<CR>", {noremap = true})
-map("n", "<leader>sg", ":Telescope live_grep<CR>", {noremap = true})
-map("n", "<leader>sc", ":Telescope git_commits<CR>", {noremap = true})
-map("n", "<leader>sb", ":Telescope git_branches<CR>", {noremap = true})
-map("n", "<leader>sw", ":Telescope grep_string<CR>", {noremap = true})
-map(
-    "n",
-    "<leader>ss",
-    ":lua require('telescope.builtin').symbols({ sources = { 'emoji', 'gitmoji'}})<CR>",
-    {noremap = true}
-)
-map("n", "<leader>sd", ":Telescope lsp_document_symbols<CR>", {noremap = true})
-map("n", "<F10>", ":TagbarToggle<CR>", {noremap = true})
+--map("n", "<leader>sd", ":Telescope lsp_document_symbols<CR>", {noremap = true})
+--map("n", "<F10>", ":TagbarToggle<CR>", {noremap = true})
 -- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {desc = "Goto Definition"})
-vim.keymap.set('n', '<leader>bd', function() require('mini.bufremove').delete(0, false) end, {desc = 'Delete Buffer'})
