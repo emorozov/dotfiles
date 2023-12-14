@@ -68,3 +68,14 @@ vim.wo.foldlevel = 99
 -- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+
+vim.g.neovide_scale_factor = 1.0
+local change_scale_factor = function(delta)
+  vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+end
+vim.keymap.set("n", "<C-=>", function()
+  change_scale_factor(1.25)
+end)
+vim.keymap.set("n", "<C-->", function()
+  change_scale_factor(1/1.25)
+end)
