@@ -14,7 +14,9 @@ text/markdown=neovide.desktop
 image/jpg=geeqie.desktop
 image/jpeg=geeqie.desktop
 image/png=geeqie.desktop
+video/mp4=mpv.desktop
 inode/directory=pcmanfm-qt.desktop
+application/pdf=org.pwmt.zathura.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-BQ9QE1.desktop;org.telegram.desktop.desktop;
