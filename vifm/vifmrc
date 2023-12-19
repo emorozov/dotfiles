@@ -1,44 +1,52 @@
+filetype *.json fx %c
+filetype * xdg-open %c &
+
 nnoremap w :view<cr>
 
+" Example of standard two-panel file managers mappings
+nnoremap <f3> :!less %f<cr>
+nnoremap <f4> :edit<cr>
+nnoremap <f5> :copy<cr>
+nnoremap <f6> :move<cr>
+nnoremap <f7> :mkdir<space>
+nnoremap <f8> :delete<cr>
+
 " View contents of archive files on opening them
-filetype *.7z,*.bz2,*.cab,*.cpio,*.deb,*.gz,
-        \*.msi,*.pkg,*.rar,*.tar,*.tgz,*.xz,*.zip
-        \ als %f | less
-" Silently extract selected archives in background
-command extract aunpack -e %f &>/dev/null &
-" Map extraction command
-nnoremap ex :extract<CR>
-" Archive preview
 fileviewer *.7z,*.bz2,*.cab,*.cpio,*.deb,*.gz,
-          \*.msi,*.pkg,*.rar,*.tar,*.tgz,*.xz,*.zip
-          \ als %f
+        \*.msi,*.pkg,*.rar,*.tar,*.tgz,*.xz,*.zip
+        \ als %f
 
 fileviewer *.pdf
-    \ vifm-sixel pdf %pw %ph %c %pd
+    \ vifmimg pdf %px %py %pw %ph %c
     \ %pc
-    \ vifm-sixel clear
+    \ vifmimg clear
+
+fileviewer *.djvu
+    \ vifmimg djvu %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
 
 fileviewer *.epub
-    \ vifm-sixel epub %pw %ph %c %pd
+    \ vifmimg epub %px %py %pw %ph %c
     \ %pc
-    \ vifm-sixel clear
+    \ vifmimg clear
 
 fileviewer <video/*>
-    \ vifm-sixel video %pw %ph %c %pd
+    \ vifmimg video %px %py %pw %ph %c
     \ %pc
-    \ vifm-sixel clear
+    \ vifmimg clear
 
 fileviewer <image/*>
-    \ vifm-sixel draw %pw %ph %c %pd
+    \ vifmimg draw %px %py %pw %ph %c
     \ %pc
-    \ vifm-sixel clear
+    \ vifmimg clear
 
 fileviewer <audio/*>
-    \ vifm-sixel audio %pw %ph %c %pd
+    \ vifmimg audio %px %py %pw %ph %c
     \ %pc
-    \ vifm-sixel clear
+    \ vifmimg clear
 
 fileviewer <font/*>
-    \ vifm-sixel font %pw %ph %c %pd
+    \ vifmimg font %px %py %pw %ph %c
     \ %pc
-    \ vifm-sixel clear
+    \ vifmimg clear
