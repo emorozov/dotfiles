@@ -6,6 +6,7 @@
 *.so.*
 *.npm*
 *.ova
+*.qcow2
 .xsession-errors
 **/__pycache__
 **/qemu
