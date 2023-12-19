@@ -10,14 +10,18 @@ local formatters = {
 }
 
 return {
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      format_on_save = {
-        timeout_ms = 2000,
-        lsp_fallback = false,
-      },
-      formatters_by_ft = formatters,
+  "stevearc/conform.nvim",
+  lazy = true,
+  opts = {
+    formatters_by_ft = formatters,
+  },
+  keys = {
+    {
+      "<leader>f",
+      function()
+        require("conform").format()
+      end,
+      desc = "Format Buffer",
     },
   },
 }

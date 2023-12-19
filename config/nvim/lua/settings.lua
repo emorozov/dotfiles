@@ -43,10 +43,7 @@ augroup end
 )
 
 opt.termguicolors = true
-opt.guifont = { "JetBrainsMono NFP", ":h10" }
---cmd "colorscheme onedark"
-
---require "lspconfig".pyright.setup {}
+opt.guifont = { "JetBrainsMono NFP", ":h11" }
 
 local function map(mode, bind, exec, opts)
   local options = { noremap = true, silent = true }
@@ -64,7 +61,6 @@ vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 vim.wo.foldlevel = 99
 
 --map("n", "<leader>sd", ":Telescope lsp_document_symbols<CR>", {noremap = true})
---map("n", "<F10>", ":TagbarToggle<CR>", {noremap = true})
 -- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
@@ -77,5 +73,5 @@ vim.keymap.set("n", "<C-=>", function()
   change_scale_factor(1.25)
 end)
 vim.keymap.set("n", "<C-->", function()
-  change_scale_factor(1/1.25)
+  change_scale_factor(1 / 1.25)
 end)
