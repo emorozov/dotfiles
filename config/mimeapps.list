@@ -14,6 +14,7 @@ text/markdown=neovide.desktop
 image/jpg=geeqie.desktop
 image/jpeg=geeqie.desktop
 image/png=geeqie.desktop
+image/gif=geeqie.desktop
 video/mp4=mpv.desktop
 inode/directory=pcmanfm-qt.desktop
 application/pdf=org.pwmt.zathura.desktop
