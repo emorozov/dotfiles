@@ -1,6 +1,7 @@
 -- Open tag navigation split with :Tagbar
 return {
   "preservim/tagbar",
+  event = "VeryLazy",
   init = function()
     vim.g.tagbar_autofocus = 1
     vim.g.tagbar_show_data_type = 1
