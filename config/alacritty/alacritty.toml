@@ -1,0 +1,23 @@
+import = ["/home/jmv/.alacritty-colorscheme/themes/afterglow.toml"]
+
+[font]
+size = 11.0
+
+[font.bold]
+family = "CaskaydiaCove Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[window]
+opacity = 1.0
