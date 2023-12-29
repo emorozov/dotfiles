@@ -1,4 +1,6 @@
-import = ["/home/jmv/.alacritty-colorscheme/themes/afterglow.toml"]
+import = [
+    "~/.config/alacritty/themes/themes/gnome_terminal.toml"
+]
 
 [font]
 size = 11.0
