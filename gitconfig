@@ -52,3 +52,8 @@
 	required = true
 [rerere]
 	enabled = true
+[diff]
+	tool = meld
+[init]
+	defaultBranch = master
+
