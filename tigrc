@@ -13,6 +13,10 @@ bind log   <Ctrl-p> :?^commit
 bind stage <Ctrl-n> :/^@@
 bind stage <Ctrl-p> :?^@@
 
+# View diff in the external diff tool (e.g. meld)
+bind main w !git difftool -d %(commit)^!
+bind diff w !git difftool -d %(commit)^!
+
 # vim-like
 bind generic g none
 bind generic gg move-first-line
