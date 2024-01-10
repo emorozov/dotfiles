@@ -9,6 +9,10 @@ fish_add_path /opt/vkteams
 
 set fish_function_path ~/.config/fish/fish-work/uma/ $fish_function_path
 
+set -x FZF_CTRL_T_OPTS "--preview 'bat --color=always --style=numbers {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+set -x FZF_ALT_C_COMMAND "fd -t d -H --color=never"
+set -x FZF_ALT_C_OPTS "--preview 'tree -C {} | head -50'"
+set -x FZF_COMPLETE 0
 
 # bobthefish prompt configuration
 set -g theme_display_date no
@@ -18,10 +22,6 @@ set -g theme_color_scheme solarized
 set fish_cursor_default block
 set fish_cursor_insert line
 set fish_cursor_replace_one underscore
-
-if type -q fzf_key_bindings
-    fzf_key_bindings
-end
 
 if status --is-interactive
     source ~/.config/fish/conf.d/abbreviations.fish
