@@ -25,13 +25,13 @@ pause-notifications.sh &
 
 pkill 'aw-watcher-*'
 pkill 'aw-server-*'
-if command -sq aw-qt and not pgrep -x aw-qt >/dev/null
-    aw-qt
+if command -sq aw-qt; and not pgrep -x -c aw-qt &>/dev/null
+    aw-qt &
 end
 
 xrdb ~/.Xresources
-xset r rate 200 80
-xset dpms 30 60 120
+xset r rate 210 80
+xset dpms 1800 3600 7200
 
 # Automatically change monitor configuration when change in outputs is detected
 srandrd ~/bin/monitor-change-hook
