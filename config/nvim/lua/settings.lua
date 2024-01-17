@@ -33,24 +33,24 @@ opt.inccommand = "split"
 
 -- Highlight yanked text for a moment
 exec(
-  [[
+	[[
 augroup YankHighlight
 autocmd!
 autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
 augroup end
 ]],
-  false
+	false
 )
 
 opt.termguicolors = true
 opt.guifont = { "JetBrainsMono NFP", ":h11" }
 
 local function map(mode, bind, exec, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, bind, exec, opts)
+	local options = { noremap = true, silent = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, bind, exec, opts)
 end
 
 -- Turn on Folding
@@ -64,14 +64,20 @@ vim.wo.foldlevel = 99
 -- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+vim.keymap.set(
+	"n",
+	"<leader>ts",
+	[[:s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<cr>:nohl<cr>]],
+	{ desc = "Change CamelCase to snake_case" }
+)
 
 vim.g.neovide_scale_factor = 1.0
 local change_scale_factor = function(delta)
-  vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
 end
 vim.keymap.set("n", "<C-=>", function()
-  change_scale_factor(1.25)
+	change_scale_factor(1.25)
 end)
 vim.keymap.set("n", "<C-->", function()
-  change_scale_factor(1 / 1.25)
+	change_scale_factor(1 / 1.25)
 end)
