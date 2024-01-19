@@ -1,44 +1,57 @@
 return {
-  "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "nvim-tree/nvim-web-devicons",
-    "nvim-telescope/telescope-symbols.nvim",
-  },
-  config = function()
-    local telescope = require("telescope")
-    local actions = require("telescope.actions")
+	"nvim-telescope/telescope.nvim",
+	branch = "0.1.x",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"folke/trouble.nvim",
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		"nvim-tree/nvim-web-devicons",
+		"nvim-telescope/telescope-symbols.nvim",
+	},
+	config = function()
+		local telescope = require("telescope")
+		local actions = require("telescope.actions")
+		local trouble = require("trouble.providers.telescope")
 
-    telescope.setup({
-      defaults = {
-        path_display = { "truncate " },
-        mappings = {
-          i = {
-            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-            ["<C-j>"] = actions.move_selection_next, -- move to next result
-            ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-          },
-        },
-      },
-    })
+		telescope.setup({
+			defaults = {
+				path_display = { "truncate " },
+				mappings = {
+					i = {
+						["<C-k>"] = actions.move_selection_previous, -- move to prev result
+						["<C-j>"] = actions.move_selection_next, -- move to next result
+						["<C-q>"] = trouble.smart_send_to_qflist,
+						["<C-Up>"] = actions.cycle_history_prev,
+						["<C-Down>"] = actions.cycle_history_next,
+					},
+				},
+				history = {
+					path = vim.fn.stdpath("data") .. "/databases/telescope_history.sqlite3",
+					limit = 100,
+				},
+			},
+		})
 
-    telescope.load_extension("fzf")
+		telescope.load_extension("fzf")
 
-    local keymap = vim.keymap
+		local keymap = vim.keymap
 
-    keymap.set("n", "<leader>sf", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    keymap.set("n", "<leader>sv", "<cmd>Telescope git_files<cr>", { desc = "Fuzzy find files under version control" })
-    keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-    keymap.set("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    keymap.set("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-    keymap.set(
-      "n",
-      "<leader>ss",
-      ":lua require('telescope.builtin').symbols({ sources = { 'emoji', 'gitmoji'}})<CR>",
-      { desc = "Find emoji" }
-    )
-    keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
-  end,
+		keymap.set("n", "<leader>sf", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+		keymap.set(
+			"n",
+			"<leader>sv",
+			"<cmd>Telescope git_files<cr>",
+			{ desc = "Fuzzy find files under version control" }
+		)
+		keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+		keymap.set("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+		keymap.set("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+		keymap.set(
+			"n",
+			"<leader>ss",
+			":lua require('telescope.builtin').symbols({ sources = { 'emoji', 'gitmoji'}})<CR>",
+			{ desc = "Find emoji" }
+		)
+		keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
+	end,
 }
