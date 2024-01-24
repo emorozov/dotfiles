@@ -32,15 +32,27 @@ autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja setlocal 
 opt.inccommand = "split"
 
 -- Highlight yanked text for a moment
-exec(
-	[[
-augroup YankHighlight
-autocmd!
-autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
-augroup end
-]],
-	false
-)
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 700 })
+	end,
+})
+
+-- go to last loc when opening a buffer
+vim.api.nvim_create_autocmd("BufReadPre", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "<buffer>",
+			once = true,
+			callback = function()
+				vim.cmd(
+					[[if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif]]
+				)
+			end,
+		})
+	end,
+})
 
 opt.termguicolors = true
 opt.guifont = { "JetBrainsMono NFP", ":h11" }
