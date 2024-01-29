@@ -7,20 +7,20 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
 		"nvim-telescope/telescope-symbols.nvim",
+		{ "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
 	},
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local trouble = require("trouble.providers.telescope")
+		local lga_actions = require("telescope-live-grep-args.actions")
 
 		telescope.setup({
 			defaults = {
 				path_display = { "truncate " },
 				mappings = {
 					i = {
-						["<C-k>"] = actions.move_selection_previous, -- move to prev result
-						["<C-j>"] = actions.move_selection_next, -- move to next result
-            ["<C-t>"] = trouble.open_with_trouble,
+						["<C-t>"] = trouble.open_with_trouble,
 						["<C-Up>"] = actions.cycle_history_prev,
 						["<C-Down>"] = actions.cycle_history_next,
 					},
@@ -28,6 +28,17 @@ return {
 				history = {
 					path = vim.fn.stdpath("data") .. "/databases/telescope_history.sqlite3",
 					limit = 100,
+				},
+			},
+			extensions = {
+				live_grep_args = {
+					auto_quoting = true,
+					mappings = {
+						i = {
+							["<C-k>"] = lga_actions.quote_prompt(),
+							["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+						},
+					},
 				},
 			},
 		})
@@ -53,5 +64,11 @@ return {
 			{ desc = "Find emoji" }
 		)
 		keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
+		keymap.set(
+			"n",
+			"<leader>sr",
+			":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+			{ desc = "Live grep with args" }
+		)
 	end,
 }
