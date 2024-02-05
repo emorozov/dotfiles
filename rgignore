@@ -1,3 +1,5 @@
 *.min.js
 *.min.css
 *.js.map
+!.gitlab-ci.yml
+!.pre-commit-config.yaml
