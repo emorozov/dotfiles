@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"folke/neodev.nvim",
+		"SmiteshP/nvim-navic",
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
@@ -53,6 +54,56 @@ return {
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+			local navic = require("nvim-navic")
+
+			navic.setup({
+				icons = {
+					File = "󰈙 ",
+					Module = " ",
+					Namespace = "󰌗 ",
+					Package = " ",
+					Class = "󰌗 ",
+					Method = "󰆧 ",
+					Property = " ",
+					Field = " ",
+					Constructor = " ",
+					Enum = "󰕘",
+					Interface = "󰕘",
+					Function = "󰊕 ",
+					Variable = "󰆧 ",
+					Constant = "󰏿 ",
+					String = "󰀬 ",
+					Number = "󰎠 ",
+					Boolean = "◩ ",
+					Array = "󰅪 ",
+					Object = "󰅩 ",
+					Key = "󰌋 ",
+					Null = "󰟢 ",
+					EnumMember = " ",
+					Struct = "󰌗 ",
+					Event = " ",
+					Operator = "󰆕 ",
+					TypeParameter = "󰊄 ",
+				},
+				lsp = {
+					auto_attach = false,
+					preference = nil,
+				},
+				highlight = false,
+				separator = " > ",
+				depth_limit = 0,
+				depth_limit_indicator = "..",
+				safe_output = true,
+				lazy_update_context = false,
+				click = false,
+				format_text = function(text)
+					return text
+				end,
+			})
+			if client.server_capabilities.documentSymbolProvider then
+				navic.attach(client, bufnr)
+			end
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
