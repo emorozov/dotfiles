@@ -29,6 +29,8 @@
 **/.wine
 **/.config/Slack
 **/.config/yandex-browser-beta
+**/.config/yandex-browser
+**/.config/OpenLens
 **/.config/Microsoft
 **/.config/Code - OSS
 **/.config/JetBrains
