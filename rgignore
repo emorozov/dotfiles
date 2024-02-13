@@ -1,5 +1,7 @@
 *.min.js
 *.min.css
 *.js.map
+poetry.lock
+package-lock.json
 !.gitlab-ci.yml
 !.pre-commit-config.yaml
