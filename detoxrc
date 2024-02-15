@@ -1,0 +1,9 @@
+sequence default {
+ uncgi;
+ utf_8 {
+   filename "/home/jmv/dotfiles/safeuni.tbl";
+ };
+ wipeup {
+   remove_trailing;
+ };
+};
