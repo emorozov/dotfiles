@@ -28,7 +28,7 @@ if status --is-interactive
     source ~/.config/fish/fish-work/uma/uma-abbrevs.fish
 
     zoxide init fish | source
-    rtx activate fish | source
+    mise activate fish | source
     starship init fish | source
 end
 
