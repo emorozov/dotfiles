@@ -26,6 +26,8 @@
 	s = status -sb
 	sw = switch
 	a = add
+	cp = cherry-pick
+	recent = ! git branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\" | head -10
     bb = !better-branch.sh
 	amend = commit --amend --no-edit --date=now -a
 	lg = log --color --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
