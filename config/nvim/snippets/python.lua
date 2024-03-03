@@ -12,6 +12,17 @@ local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
+	s(
+		{ trig = "#!", dscr = "python shebang" },
+		fmta(
+			[[
+      #!/usr/bin/env python
+      ]],
+      {}
+		),
+		{ condition = line_begin }
+	),
+
 	-- Control flow
 	s(
 		{ trig = "class", dscr = "Class" },
