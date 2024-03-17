@@ -19,9 +19,7 @@ dwm-status ~/.config/dwm-status.toml &
 udiskie -t &
 dunst &
 tapper &
-xscreensaver -no-splash &
 alacritty &
-pause-notifications.sh &
 
 pkill 'aw-watcher-*'
 pkill 'aw-server-*'
