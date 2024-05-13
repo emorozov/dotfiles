@@ -21,12 +21,6 @@ dunst &
 tapper &
 alacritty &
 
-pkill 'aw-watcher-*'
-pkill 'aw-server-*'
-if command -sq aw-qt; and not pgrep -x -c aw-qt &>/dev/null
-    aw-qt &
-end
-
 xrdb ~/.Xresources
 xset r rate 210 80
 xset dpms 1800 3600 7200
