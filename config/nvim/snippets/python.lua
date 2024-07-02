@@ -176,13 +176,6 @@ return {
 		{ condition = line_begin }
 	),
 }, {
-	s({ trig = "tq", dscr = "Triple quotes" }, {
-		t('"""'),
-		f(_G.LuaSnipConfig.visual_selection),
-		i(1),
-		t('"""'),
-		i(0),
-	}),
 	s(
 		{ trig = "fq", dscr = "f-string quote" },
 		fmta(
