@@ -12,7 +12,7 @@ return {
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
-		local trouble = require("trouble.providers.telescope")
+		local trouble = require("trouble.sources.telescope")
 		local lga_actions = require("telescope-live-grep-args.actions")
 
 		telescope.setup({
@@ -20,7 +20,7 @@ return {
 				path_display = { "truncate " },
 				mappings = {
 					i = {
-						["<C-t>"] = trouble.open_with_trouble,
+						["<C-t>"] = trouble.open,
 						["<C-Up>"] = actions.cycle_history_prev,
 						["<C-Down>"] = actions.cycle_history_next,
 					},
