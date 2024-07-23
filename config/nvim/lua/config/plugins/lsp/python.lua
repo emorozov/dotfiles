@@ -7,30 +7,11 @@ return {
 		"rcarriga/nvim-notify",
 	},
 	lazy = true,
-	config = function(_, opts)
-		local venv_selector = require("venv-selector")
-
-		opts.changed_venv_hooks = {
-			venv_selector.hooks.pyright,
-		}
-
-		venv_selector.setup(opts)
-	end,
-	init = function()
-		vim.api.nvim_create_autocmd("Filetype", {
-			pattern = { "python" },
-			callback = function()
-				require("venv-selector").retrieve_from_cache()
-			end,
-		})
-
-		return true
+	branch = "regexp",
+	config = function()
+		require("venv-selector").setup()
 	end,
 	keys = {
-		{ "<leader>vs", "<cmd>VenvSelect<cr>" },
-		{ "<leader>vc", "<cmd>VenvSelectCached<cr>" },
+		{ ",v", "<cmd>VenvSelect<cr>" },
 	},
-	-- opts = {
-	--   dap_enabled = true,
-	-- },
 }
