@@ -10,6 +10,9 @@ disabled = true
 [buf]
 disabled = true
 
+[aws]
+disabled = true
+
 [python]
 detect_extensions = []
 
