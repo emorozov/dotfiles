@@ -1,9 +1,6 @@
-import = [
-    "~/.config/alacritty/themes/themes/gnome_terminal.toml"
-]
 
 [font]
-size = 11.0
+size = 12.0
 
 [font.bold]
 family = "CaskaydiaCove Nerd Font Mono"
@@ -23,3 +20,8 @@ mods = "Control|Shift"
 
 [window]
 opacity = 1.0
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/gnome_terminal.toml"
+]
