@@ -38,6 +38,7 @@
 **/.vscode-oss
 **/*-build
 **/Data Folder
+**/Аудиокниги
 **/out
 **/Yandex.Disk
 **/Trash
@@ -45,3 +46,4 @@
 **/Downloads
 **/.thumbnails
 **/.dtrash
+**/.zoom
