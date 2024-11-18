@@ -60,4 +60,5 @@
 	tool = meld
 [init]
 	defaultBranch = master
-
+[includeIf "gitdir:~/work/"]
+        path = ~/work/.gitconfig
