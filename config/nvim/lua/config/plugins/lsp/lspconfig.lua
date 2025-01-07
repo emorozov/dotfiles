@@ -16,11 +16,17 @@ return {
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
 
-			opts.desc = "Show LSP references"
-			keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+			opts.desc = "Glance references"
+			keymap.set("n", "gR", "<cmd>Glance references<CR>", opts) -- show definition, references
 
-			opts.desc = "Go to declaration"
-			keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+			opts.desc = "Glance definitions"
+			keymap.set("n", "gD", "<cmd>Glance definitions<CR>", opts) -- go to declaration
+
+			opts.desc = "Glance type definitions"
+			keymap.set("n", "gY", "<cmd>Glance type_definitions<CR>", opts)
+
+			opts.desc = "Glance implementations"
+			keymap.set("n", "gM", "<cmd>Glance implementations<CR>", opts)
 
 			opts.desc = "Show LSP definitions"
 			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
