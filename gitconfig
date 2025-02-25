@@ -13,9 +13,11 @@
 	tool = meld
 [fetch]
 	prune = true
+	pruneTags = true
+	all = true
 [push]
 	default = simple
-    autoSetupRemote = true
+	autoSetupRemote = true
 [stash]
 	showPatch = true
 [log]
@@ -58,7 +60,21 @@
 	enabled = true
 [diff]
 	tool = meld
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [init]
 	defaultBranch = master
 [includeIf "gitdir:~/work/"]
-        path = ~/work/.gitconfig
+    path = ~/work/.gitconfig
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
