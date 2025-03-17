@@ -7,7 +7,7 @@
 *.npm*
 *.ova
 *.qcow2
-.xsession-errors
+**/.xsession-errors
 **/__pycache__
 **/qemu
 **/VirtualBox VMs
