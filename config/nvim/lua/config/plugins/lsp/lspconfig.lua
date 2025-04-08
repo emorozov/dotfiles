@@ -61,6 +61,11 @@ return {
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
+      keymap.set('n', 'gK', function()
+          local new_config = not vim.diagnostic.config().virtual_lines
+          vim.diagnostic.config({virtual_lines = new_config})
+      end, {desc = 'Toggle diagnostic virtual_lines'})
+
 			local navic = require("nvim-navic")
 
 			navic.setup({
