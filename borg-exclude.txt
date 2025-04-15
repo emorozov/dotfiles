@@ -18,6 +18,7 @@
 **/.virtualenvs
 **/.mozilla
 **/node_modules
+**/.yarn
 **/.local/share/virtualenv*
 **/.local/share/TelegramDesktop
 **/.local/share/Zeal
