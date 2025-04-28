@@ -20,6 +20,7 @@
 **/node_modules
 **/.yarn
 **/.local/share/virtualenv*
+**/.local/share/mise
 **/.local/share/TelegramDesktop
 **/.local/share/Zeal
 **/.local/share/Trash
