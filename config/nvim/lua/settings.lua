@@ -102,6 +102,8 @@ vim.keymap.set(
 	{ desc = "Change CamelCase to snake_case" }
 )
 
+vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+
 vim.g.neovide_scale_factor = 1.0
 local change_scale_factor = function(delta)
 	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
