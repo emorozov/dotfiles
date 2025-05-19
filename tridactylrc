@@ -2,7 +2,11 @@ quickmark p https://yandex.ru/pogoda/ru
 quickmark h https://news.ycombinator.com
 quickmark s http://127.0.0.1:8384/
 
+unbindurl meet.google.com <C-d>
+
 bindurl ya(ndex)?\.ru/search f hint -Jc a.organic__url, a.Pager-Item
 bindurl ya(ndex)?\.ru/search F hint -Jbc a.organic__url, a.Pager-Item
 
 set followpagepatterns.next ^(next|newer)\b|»|>>|^(more|дальше)$
+
+" vim: set filetype=vim:
