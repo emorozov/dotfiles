@@ -7,6 +7,9 @@ unbindurl meet.google.com <C-d>
 bindurl ya(ndex)?\.ru/search f hint -Jc a.organic__url, a.Pager-Item
 bindurl ya(ndex)?\.ru/search F hint -Jbc a.organic__url, a.Pager-Item
 
+bindurl news.ycombinator.com f hint -Jc .titleline>a, .subline>a:last-child
+bindurl news.ycombinator.com F hint -Jbc .titleline>a, .subline>a:last-child
+
 set followpagepatterns.next ^(next|newer)\b|»|>>|^(more|дальше)$
 
 " vim: set filetype=vim:
