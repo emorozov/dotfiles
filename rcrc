@@ -1,4 +1,4 @@
-EXCLUDES="LICENSE xorg.conf.d"
+EXCLUDES="LICENSE xorg.conf.d etc"
 DOTFILES_DIRS=$HOME/dotfiles
 UNDOTTED="bin"
 SYMLINK_DIRS="config/autorandr config/fish config/nvim"
