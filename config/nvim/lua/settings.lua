@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 opt.termguicolors = true
-opt.guifont = { "JetBrainsMono NFP", ":h11" }
+opt.guifont = { "FiraMono Nerd Font", ":h12" }
 
 local function map(mode, bind, exec, opts)
 	local options = { noremap = true, silent = true }
