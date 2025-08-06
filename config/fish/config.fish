@@ -30,5 +30,6 @@ if status --is-interactive
     zoxide init fish | source
     mise activate fish | source
     starship init fish | source
+    atuin init fish | source
 end
 
