@@ -30,6 +30,5 @@ if status --is-interactive
     zoxide init fish | source
     mise activate fish | source
     starship init fish | source
-    atuin init fish --disable-up-arrow | source
 end
 
