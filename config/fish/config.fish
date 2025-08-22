@@ -27,8 +27,14 @@ if status --is-interactive
     source ~/.config/fish/conf.d/abbreviations.fish
     source ~/.config/fish/fish-work/uma/uma-abbrevs.fish
 
-    zoxide init fish | source
-    mise activate fish | source
+    if command -q zoxide
+        zoxide init fish | source
+    end
+
+    if command -q mise
+        mise activate fish | source
+    end
+
     starship init fish | source
 end
 
