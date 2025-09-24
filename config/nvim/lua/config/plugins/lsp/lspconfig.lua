@@ -7,7 +7,6 @@ return {
 		"SmiteshP/nvim-navic",
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local keymap = vim.keymap
@@ -122,26 +121,14 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- configure html server
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure css server
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
 		-- configure python server
-		lspconfig["pyright"].setup({
+		vim.lsp.config.basedpyright = {
 			capabilities = capabilities,
 			on_attach = on_attach,
-		})
+		}
 
 		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
+		vim.lsp.config.lua_ls = {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = { -- custom settings for lua
@@ -159,12 +146,12 @@ return {
 					},
 				},
 			},
-		})
+		}
 
-		-- configure golang server
-		lspconfig["gopls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
+		-- -- configure golang server
+		-- lspconfig["gopls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 	end,
 }
