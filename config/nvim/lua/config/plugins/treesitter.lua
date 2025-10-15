@@ -37,6 +37,7 @@ return {
           "sql",
           "rust",
           "go",
+          "vimdoc",
         },
         incremental_selection = {
           enable = true,

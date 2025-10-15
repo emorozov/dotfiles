@@ -74,7 +74,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 opt.termguicolors = true
-opt.guifont = { "FiraMono Nerd Font", ":h12" }
 
 local function map(mode, bind, exec, opts)
 	local options = { noremap = true, silent = true }
@@ -104,13 +103,20 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>/", ":nohl<CR>", { desc = "Clear search highlights" })
 
-vim.g.neovide_scale_factor = 1.0
-local change_scale_factor = function(delta)
-	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+opt.guifont = { "FiraMono Nerd Font", ":h12" }
+
+if vim.g.neovide == true then
+  vim.g.neovide_scale_factor = 1.0
+  local change_scale_factor = function(delta)
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+  end
+  vim.keymap.set("n", "<C-=>", function()
+    change_scale_factor(1.15)
+  end)
+  vim.keymap.set("n", "<C-->", function()
+    change_scale_factor(1 / 1.15)
+  end)
+
+  vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy system clipboard" })
+  vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste system clipboard" })
 end
-vim.keymap.set("n", "<C-=>", function()
-	change_scale_factor(1.25)
-end)
-vim.keymap.set("n", "<C-->", function()
-	change_scale_factor(1 / 1.25)
-end)
