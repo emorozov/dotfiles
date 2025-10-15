@@ -7,8 +7,6 @@ end
 fish_add_path ~/bin
 fish_add_path /opt/vkteams
 
-set fish_function_path ~/.config/fish/fish-work/uma/ $fish_function_path
-
 set -x FZF_CTRL_T_OPTS "--preview 'bat --color=always --style=numbers {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 set -x FZF_ALT_C_COMMAND "fd -t d -H --color=never"
 set -x FZF_ALT_C_OPTS "--preview 'tree -C {} | head -50'"
@@ -25,7 +23,6 @@ set fish_cursor_replace_one underscore
 
 if status --is-interactive
     source ~/.config/fish/conf.d/abbreviations.fish
-    source ~/.config/fish/fish-work/uma/uma-abbrevs.fish
 
     if command -q zoxide
         zoxide init fish | source
