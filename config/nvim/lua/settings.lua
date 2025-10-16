@@ -90,6 +90,8 @@ vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 vim.wo.foldlevel = 99
 
+vim.keymap.set('n', 'ZZ', ':xa<CR>', { noremap = true, silent = true, desc = "Save unsaved buffers and quit all windows" })
+
 --map("n", "<leader>sd", ":Telescope lsp_document_symbols<CR>", {noremap = true})
 -- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 
