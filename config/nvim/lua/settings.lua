@@ -1,6 +1,4 @@
 local cmd = vim.cmd
-local exec = vim.api.nvim_exec
-local g = vim.g
 local opt = vim.opt
 
 opt.colorcolumn = "+1"
@@ -73,15 +71,21 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-opt.termguicolors = true
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = '» ',
+  trail = '•',
+  nbsp = '+',
+}
 
-local function map(mode, bind, exec, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, bind, exec, opts)
-end
+vim.api.nvim_create_user_command("TrimWhitespace", function()
+    local save_cursor = vim.fn.getpos(".")
+    pcall(function() vim.cmd [[%s/\s\+$//e]] end)
+    vim.fn.setpos(".", save_cursor)
+end, { nargs = 0 })
+vim.keymap.set('n', '<Leader>wt', "<CMD>TrimWhitespace<CR>", { desc = "Trim trailing whitespace" })
+
+opt.termguicolors = true
 
 -- Turn on Folding
 vim.wo.foldmethod = "expr"
@@ -91,9 +95,6 @@ vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 vim.wo.foldlevel = 99
 
 vim.keymap.set('n', 'ZZ', ':xa<CR>', { noremap = true, silent = true, desc = "Save unsaved buffers and quit all windows" })
-
---map("n", "<leader>sd", ":Telescope lsp_document_symbols<CR>", {noremap = true})
--- { "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
 vim.keymap.set(
@@ -119,6 +120,6 @@ if vim.g.neovide == true then
     change_scale_factor(1 / 1.15)
   end)
 
-  vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy system clipboard" })
-  vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste system clipboard" })
+  -- vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy system clipboard" })
+  -- vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste system clipboard" })
 end
