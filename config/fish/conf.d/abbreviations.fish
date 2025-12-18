@@ -1,5 +1,10 @@
 set sensible_search "(bfs -exclude -name .git -exclude -name .cache -exclude -name .local -exclude -name .zoom -exclude -name __pycache__ | fzf)"
 
+abbr --add --position command pr pytest --reuse-db
+abbr --add --position command prv pytest -vv --reuse-db
+abbr --add --position command rf ruff check --fix
+abbr --add --position command r ./manage.py runserver
+
 abbr --add --position command gs git status -sb
 abbr --add --position command gco git checkout
 abbr --add --position command ga git add
