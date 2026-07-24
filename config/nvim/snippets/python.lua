@@ -118,6 +118,16 @@ return {
 			{}
 		)
 	),
+	s(
+		{ trig = "lp", dscr = "Line profiler" },
+			fmta(
+			[[
+      from line_profiler import profile
+      @profile
+      ]],
+			{}
+		)
+	),
 
 	---- Datetime
 	s(
@@ -172,27 +182,6 @@ return {
           <>
       ]],
 			{ i(1, "filepath"), i(2, "r"), i(3, "f"), i(4) }
-		),
-		{ condition = line_begin }
+		)
 	),
-}, {
-	s(
-		{ trig = "fq", dscr = "f-string quote" },
-		fmta(
-			[[
-      f<><><><>
-      ]],
-			{
-				c(1, { sn(nil, { i(1, '"') }), t("'") }),
-				f(_G.LuaSnipConfig.visual_selection),
-				i(2),
-				rep(1),
-			}
-		),
-		{ condition = line_begin }
-	),
-	s({ trig = "--", wordTrig = false, dscr = "Return" }, {
-		t("->"),
-		i(1),
-	}),
 }
