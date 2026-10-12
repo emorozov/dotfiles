@@ -123,3 +123,7 @@ if vim.g.neovide == true then
   -- vim.keymap.set({ "n", "x" }, "<C-S-C>", '"+y', { desc = "Copy system clipboard" })
   -- vim.keymap.set({ "n", "x" }, "<C-S-V>", '"+p', { desc = "Paste system clipboard" })
 end
+
+vim.diagnostic.config({
+  virtual_lines = false,
+})
